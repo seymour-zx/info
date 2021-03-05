@@ -102,6 +102,7 @@ main.unit article > * {margin-left: 1rem; margin-right: 1rem;}
     max-height: 38.2vh;
 } /* main.unit信息专属 */
 main.base article > * {margin-left: 1rem; margin-right: 1rem;}
+  main.base article section {padding-left: 1rem; padding-right: 1rem;}
   main.base h1 {text-align: center;
 }/* main.base基础专属 */
 main.homepage article > * {margin-left: 1rem; margin-right: 1rem;}
