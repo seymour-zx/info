@@ -22,7 +22,7 @@ def update(txtfolder):
             info = info + gmtime
             info = info + '</td>\n'
             info = info + '          <td><a href="https://zhengxie.info/unit/' + str(n) +'/"'
-            info = info + ' title="" target="_self">'
+            info = info + ' title="" target="_blank">'
             info = info + frinfo('title.txt', indexfolder)
             info = info + '</a></td>\n        </tr>\n'            
         n = n - 1
@@ -69,8 +69,8 @@ def info_article(file, indexfolder, txtfolder, htmlfolder, gmtime):
     if os.path.exists(path):
         info = info + frinfo(file, indexfolder)
     else:
-        fwinfo(path, '      <h2></h2>\n      <h3></h3>\n      <h4></h4>\n      <section></section>\n      <p></p>\n      <pre><code></code></pre>\n      <hr />\n')
-        info = info + '      <h2></h2>\n      <h3></h3>\n      <h4></h4>\n      <section></section>\n      <p></p>\n      <pre><code></code></pre>\n      <hr />\n'
+        fwinfo(path, '      <h2></h2>\n      <h3></h3>\n      <h4></h4>\n      <section></section>\n      <p></p>\n      <pre><code></code></pre>\n      <hr />\n <!--\n         <section>\n           <h5>本文系转载，无意侵权</h5>\n           <h5>本文内容参鉴：</h5>\n           <h6><a href="" title="" target="_blank"></a></h6>\n           <h5>如已侵权，联系自删</h5>\n         </section>\n   -->')
+        info = info + '      <h2></h2>\n      <h3></h3>\n      <h4></h4>\n      <section></section>\n      <p></p>\n      <pre><code></code></pre>\n      <hr />\n <!--\n         <section>\n           <h5>本文系转载，无意侵权</h5>\n           <h5>本文内容参鉴：</h5>\n           <h6><a href="" title="" target="_blank"></a></h6>\n           <h5>如已侵权，联系自删</h5>\n         </section>\n   -->'
     info = info + '\n    </article>'
     return info
 
@@ -141,7 +141,7 @@ def htmls(htmlfolder, indexfolder, txtfolder, gmtime):
     with open(html, 'w', encoding='utf-8') as fw:
         fw.writelines(info)  
     html = os.path.abspath(html)
-    webbrowser.open(html,new = 0, autoraise=True)
+    # webbrowser.open(html,new = 0, autoraise=True)
 
 
 if __name__ == '__main__':
