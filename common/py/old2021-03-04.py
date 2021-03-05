@@ -264,7 +264,7 @@ def execute():
 
 if __name__ == '__main__':
     cmddir = 'D:\\Workspace'
-    pydir = 'D:\\Workspace\\Html\\seymour-zx.github.io\\common\\py'
+    pydir = 'D:\\Workspace\\Html\\zhengxie.info\\common\\py'
     print('......判断运行目录......')
     if os.getcwd()==cmddir or os.getcwd()==pydir:
         print('......运行目录正确！......')
@@ -278,7 +278,7 @@ if __name__ == '__main__':
         print(pydir)
         print('......当前运行目录：')
         print(os.getcwd())
-    # pydir = input("\n......程序执行完毕！......\n......按Enter关闭窗口......")
+    pydir = input("\n......程序执行完毕！......\n......按Enter关闭窗口......")
     """
     # 网址拼接
 
