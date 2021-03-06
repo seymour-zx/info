@@ -60,10 +60,10 @@ main {width: 100%; display: flex; align-items: center; justify-content:center;}
   article {width: 100%; min-height: calc(100vh - 149px); margin: auto; background-color: rgba(244,241,237,0.8);}
     article h1, article h2, article h3, article h4, article h5, article h6, article p {color: rgba(3,2,4,1);
 }
-main.bookmark div.bookmark {margin: 0;}
-  div.bookmark input[type="checkbox"] {/*隐藏复选框*/display: none;}
-  div.bookmark input:checked + div {/*隐藏div初始化*/display: none;}
-  div.bookmark label {/*控制标签*/
+.bookmark div {margin: 0;}
+  .bookmark div input[type="checkbox"] {/*隐藏复选框*/display: none;}
+  .bookmark div input:checked + div {/*隐藏div初始化*/display: none;}
+  .bookmark div label {/*控制标签*/
     margin: 0;
     display: block;
     color:rgba(243,215,55,1);
@@ -74,46 +74,46 @@ main.bookmark div.bookmark {margin: 0;}
     padding-top: 6px;
     padding-bottom: 6px;
     padding-left: 1rem;}
-  div.bookmark .content {
+  .bookmark div .content {
     background-color: rgba(244,241,237,0);
     width: 100%; 
     display: flex;
     flex-wrap: wrap;}
-  div.bookmark span {
+  .bookmark div span {
     margin: 6px;
     padding: 6px;    
     color: rgba(244,241,237,1);
     background-color: rgba(37,86,122,1);}
-  div.bookmark a {/*列标签*/
+  .bookmark div a {/*列标签*/
     text-decoration: none;
     color: rgba(3,2,4,1);
     margin: 6px;
     padding: 6px;    
     border-left: 1px solid rgba(37,86,122,1);
 }/* main.bookmark书签专属 */
-main.unit article > * {margin-left: 1rem; margin-right: 1rem;}
-  main.unit article section {padding-left: 1rem; padding-right: 1rem;}
-  main.unit article h6 {margin-top: 3px; margin-bottom: 3px;}
-  main.unit code {
+.unit article > * {margin-left: 1rem; margin-right: 1rem;}
+  .unit article section {padding-left: 1rem; padding-right: 1rem;}
+  .unit article h6 {margin-top: 3px; margin-bottom: 3px;}
+  .unit code {
     color: rgba(244,241,237,1);
     overflow: auto;
     background-color: rgba(3,2,4,1);
     display: block;
     max-height: 38.2vh;
 } /* main.unit信息专属 */
-main.base article > * {margin-left: 1rem; margin-right: 1rem;}
-  main.base article section {padding-left: 1rem; padding-right: 1rem;}
-  main.base h1 {text-align: center;
+.base article > * {margin-left: 1rem; margin-right: 1rem;}
+  .base article section {padding-left: 1rem; padding-right: 1rem;}
+  .base h1 {text-align: center;
 }/* main.base基础专属 */
-main.homepage article > * {margin-left: 1rem; margin-right: 1rem;}
-  main.homepage h1 {text-align: center;}
-  main.homepage table.unit td + td {width: 100%;}
-  main.homepage table.unit td {
+.homepage article > * {margin-left: 1rem; margin-right: 1rem;}
+  .homepage h1 {text-align: center;}
+  .homepage table td + td {width: 100%;}
+  .homepage table td {
     color: rgba(244,241,237,1);
     background-color: rgba(37,86,122,1);
     padding-top: 3px;
     padding-bottom: 3px;}  
-    main.homepage table.unit a {
+    .homepage table a {
     text-decoration: none;
     color: rgba(244,241,237,1);
 }/* main.homepage目录专属 */

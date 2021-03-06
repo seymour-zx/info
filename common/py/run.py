@@ -12,7 +12,7 @@ def update(txtfolder):
     n = 999
     htmlfolder = '../../unit/' + str(n) +'/'
     info = ''
-    info = info + '      <table class="unit">\n'
+    info = info + '      <table>\n'
     while not n==0:
         if os.path.exists(htmlfolder):
             indexfolder = linkpath('index', htmlfolder)
