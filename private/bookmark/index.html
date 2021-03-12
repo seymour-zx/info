@@ -13,6 +13,9 @@
   <link href="../../common/css/mystyle.css" rel="stylesheet" type="text/css" />
     <!--调用css样式-->
 
+  <link href="../../common/css/commonstyle.css" rel="stylesheet" type="text/css" />
+    <!--调用css样式-->
+
   <meta name="author" content="正协信息客栈, 华朝颐亲王, Seymour, 郑協" />
 
   <base target="_blank" /><!--链接默认新开页-->
@@ -25,6 +28,65 @@
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /><!--让网页的宽度自动适应屏幕的宽度-->
   <meta name="apple-mobile-web-app-capable" content="no" /><!--设置Web应用是否以全屏模式运行-->
   <meta name="apple-mobile-web-app-status-bar-style" content="blank-translucent" /><!--顶部状态栏背景色-->
+  <style type="text/css">
+
+    /* 名称 */
+    .title{
+      padding: 0;
+        margin: 0;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        color: cadetblue;
+        margin-top: 100px;
+        margin-bottom: 20px;
+        font-family: fantasy;
+    }
+    /* 下面是搜索框样式 */
+    .searchBox{
+      padding: 0;
+        margin: 0;
+        width: 40%;
+        height: 35px;
+        border: 1px solid cadetblue;
+        outline: hidden;
+        border-radius: 2px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .inputBox{
+      padding: 0;
+        margin: 0;
+        border: none;
+        width: 84%;
+        height: 35px;
+        line-height: 35px;
+        outline: none;
+        padding-left: 10px;
+        /* 改变光标的颜色 */
+        caret-color:#008B8B;
+        font-size: 14px;
+    }
+    .searchBtn{
+      padding: 0;
+        margin: 0;
+        width: 65px;
+        height: 35px;
+        border: none;
+        position: absolute;
+        right: 0;
+        outline: none;
+        color: white;
+        font-size: 15px;
+        background-color: cornflowerblue;
+    }
+    /* 鼠标滑过按钮时背景色改变 */
+    .searchBtn:hover{
+        background-color: #497fdf;
+    }
+</style>
+
+
 </head>
 <body>
 
@@ -66,6 +128,33 @@
   <main class="bookmark">
 
     <article>
+      <div style="width: 100%;">
+        <table class='searchLabel'>
+          <tr>
+            <td>        <label for="searchBox1">在线工具</label>    </td>
+            <td>        <label for="searchBox2">在线工具</label>    </td>
+            <td>        <label for="searchBox3">在线工具</label>    </td>
+          </tr>
+        </table>
+        <div class="title">
+          <p>I &nbsp;tell&nbsp; you</p>
+        </div>        
+        <input id="searchBox1" type="checkbox" checked />
+        <div class="searchBox">
+          <input class="inputBox" placeholder="I will tell you all you want to know!">
+          <button class="searchBtn">搜索</button>
+        </div>
+        <input id="searchBox2" type="checkbox" checked />
+        <div class="searchBox">
+          <input class="inputBox" placeholder="I will tell you all you want to know!">
+          <button class="searchBtn">搜索</button>
+        </div>
+        <input id="searchBox3" type="checkbox" checked />
+        <div class="searchBox">
+          <input class="inputBox" placeholder="I will tell you all you want to know!">
+          <button class="searchBtn">搜索</button>
+        </div>
+      </div>
       <div>
         <div class="content">              
           <a href="https://github.com/seymour-zx/zhengxie.info/">GitHub</a>
@@ -327,7 +416,32 @@
         <!-- /.content -->
       </div>
       <!-- /.bookmark 关于：html&css&js（待整理归类） -->
-      
+      <div>
+        <div class="content">              
+          <a href="https://www.jianavi.com">   简约导航 </a>
+          <a href="https://hao.360.com">  360  </a>
+          <a href="https://www.hao123.com">  hao123_上网从这里开始  </a>
+          <a href="www.265.com">   265 </a>
+          <a href="site.ageqin.cn">   百度 </a>
+          <a href="7999.com">  7999  </a>
+          <a href="https://www.5566.net">  5566  </a>
+          <a href="https://m.59178.com">  手机网址大全-百分百好站上网导航  </a>
+          <a href="memewang.com"> 中国网址大全  </a>
+          <a href="https://www.kanguowai.com/"> 看国外  </a>
+          <a href="https://wenku.baidu.com/view/8d8cc55d312b3169a451a458.html">  电脑专用术语(英文) </a>
+          <a href="">   </a>
+          <a href="">   </a>
+          <a href="">   </a>
+          <a href="">   </a>
+          <a href="">   </a>
+          <a href="">   </a>
+        </div>
+        <!-- /.content -->
+      </div>
+      <!-- /.bookmark 导航网页 -->      
+
+
+
     </article>
   </main>
 
@@ -336,7 +450,7 @@
     <div>
       |&nbsp;
       &lt;&nbsp;
-      上次维护：2021-03-08T16:14Z
+      上次维护：2021-03-10T02:03Z
       &nbsp;&gt;
       &nbsp;|
     </div>
