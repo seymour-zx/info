@@ -31,9 +31,6 @@ def update(txtfolder):
     path = linkpath('article.html', '../../index/')
     fwinfo(path, info)
     htmls(htmlfolder='../../', indexfolder='../../index/', txtfolder=txtfolder, gmtime=time.gmtime())
-    path = linkpath('article.html', '../../base/homepage/index/')
-    fwinfo(path, info)
-    htmls(htmlfolder='../../base/homepage/', indexfolder='../../base/homepage/index/', txtfolder=txtfolder, gmtime=time.gmtime())
 
 def info_article(file, indexfolder, txtfolder, htmlfolder, gmtime):
 # 'article.html'

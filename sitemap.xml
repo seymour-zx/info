@@ -9,10 +9,6 @@
     <lastmod>2021-03-03T06:39:52+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.99</priority></url>
-  <url><loc>https://zhengxie.info/base/homepage/</loc>    
-    <lastmod>2021-03-03T06:39:52+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.99</priority></url>
   <url><loc>https://zhengxie.info/private/bookmark/</loc>    
     <lastmod>2021-03-03T06:39:52+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -31,6 +27,10 @@
     <priority>0.88</priority></url>
   <url><loc>https://zhengxie.info/unit/4/</loc>    
     <lastmod>2021-03-03T06:39:52+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority></url>
+  <url><loc>https://zhengxie.info/unit/5/</loc>    
+    <lastmod>2021-03-12T06:39:52+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority></url>
 </urlset>
