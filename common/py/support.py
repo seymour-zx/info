@@ -76,7 +76,7 @@ def info_title(file, indexfolder, txtfolder):
         infolist.append(frinfo(file, indexfolder))
     else:
         fwinfo(path, '')
-        infolist.append('')
+        # infolist.append('')
     infolist.append(frinfo(file, txtfolder))
     for i in range(len(infolist)):
        info = info + infolist[i]
@@ -93,7 +93,7 @@ def info_keywords(file, indexfolder, txtfolder):
     else:
         fwinfo(path, '华朝颐亲王, 正协信息客栈')
         infolist.append('华朝颐亲王, 正协信息客栈')
-    infolist.append('" />\n')    
+    infolist.append('" />')    
     for i in range(len(infolist)):
        info = info + infolist[i]
     return info
@@ -108,8 +108,8 @@ def info_description(file, indexfolder, txtfolder):
         infolist.append(frinfo(file, indexfolder))
     else:
         fwinfo(path, '')
-        infolist.append('')
-    infolist.append('" />\n')    
+        # infolist.append('')
+    infolist.append('" />')    
     for i in range(len(infolist)):
        info = info + infolist[i]
     return info

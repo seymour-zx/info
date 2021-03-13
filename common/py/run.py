@@ -89,10 +89,10 @@ def htmls(htmlfolder, indexfolder, txtfolder, gmtime):
     info = info + info_keywords('keywords.txt', indexfolder, txtfolder)
     # 差异化different
     info = info + info_description('description.txt', indexfolder, txtfolder)
-    # 差异化different
-    info = info + info_link('link.txt', indexfolder, txtfolder, htmlfolder)
     # 通用
     info = info + frinfo('author.txt', txtfolder)
+    # 差异化different
+    info = info + info_link('link.txt', indexfolder, txtfolder, htmlfolder)
     # 通用
     info = info + frinfo('body.txt', txtfolder)
     # 通用
