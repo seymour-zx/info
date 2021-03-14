@@ -100,8 +100,9 @@ def htmls(htmlfolder, indexfolder, txtfolder, gmtime):
     # 标签<main>个性化
     if htmlfolder=='../../':
         # 首页
-        info = info + '\n  <main class="sitemap">\n'
-        info = info + info_article('article.html', indexfolder, txtfolder, htmlfolder, gmtime)
+        info = info + '\n  <main class="welcome">\n'
+        # info = info + info_article('article.html', indexfolder, txtfolder, htmlfolder, gmtime)
+        info = info + frinfo('article.html', indexfolder)
     elif not htmlfolder.find('/private/')==-1:
         # 私有
         if not htmlfolder.find('bookmark')==-1:
