@@ -28,9 +28,9 @@ def update(txtfolder):
         n = n - 1
         htmlfolder = '../../unit/' + str(n) +'/'
     info = info + '      </table>'
-    path = linkpath('article.html', '../../index/')
+    path = linkpath('article.html', '../../base/sitemap/index/')
     fwinfo(path, info)
-    htmls(htmlfolder='../../', indexfolder='../../index/', txtfolder=txtfolder, gmtime=time.gmtime())
+    htmls(htmlfolder='../../base/sitemap/', indexfolder='../../base/sitemap/index/', txtfolder=txtfolder, gmtime=time.gmtime())
 
 def info_article(file, indexfolder, txtfolder, htmlfolder, gmtime):
 # 'article.html'
@@ -49,7 +49,7 @@ def info_article(file, indexfolder, txtfolder, htmlfolder, gmtime):
             pass
     elif not htmlfolder.find('/base/')==-1:
         # 基础
-        if not htmlfolder.find('homepage')==-1:
+        if not htmlfolder.find('sitemap')==-1:
             # 主页
             pass
         else:
@@ -100,7 +100,7 @@ def htmls(htmlfolder, indexfolder, txtfolder, gmtime):
     # 标签<main>个性化
     if htmlfolder=='../../':
         # 首页
-        info = info + '\n  <main class="homepage">\n'
+        info = info + '\n  <main class="sitemap">\n'
         info = info + info_article('article.html', indexfolder, txtfolder, htmlfolder, gmtime)
     elif not htmlfolder.find('/private/')==-1:
         # 私有
@@ -113,9 +113,9 @@ def htmls(htmlfolder, indexfolder, txtfolder, gmtime):
             info = info + info_article('article.html', indexfolder, txtfolder, htmlfolder, gmtime)
     elif not htmlfolder.find('/base/')==-1:
         # 基础
-        if not htmlfolder.find('homepage')==-1:
+        if not htmlfolder.find('sitemap')==-1:
             # 主页
-            info = info + '\n  <main class="homepage">\n'
+            info = info + '\n  <main class="sitemap">\n'
             info = info + info_article('article.html', indexfolder, txtfolder, htmlfolder, gmtime)
         else:
             info = info + '\n  <main class="base">\n'

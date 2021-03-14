@@ -49,18 +49,18 @@ main {width: 100%; display: flex; align-items: center; justify-content:center;}
   .base article section {padding-left: 1rem; padding-right: 1rem;}
   .base h1 {text-align: center;
 }/* main.base基础专属 */
-.homepage article > * {margin-left: 1rem; margin-right: 1rem;}
-  .homepage h1 {text-align: center;}
-  .homepage table td + td {width: 100%;}
-  .homepage table td {
+.sitemap article > * {margin-left: 1rem; margin-right: 1rem;}
+  .sitemap h1 {text-align: center;}
+  .sitemap table td + td {width: 100%;}
+  .sitemap table td {
     color: rgba(244,241,237,1);
     background-color: rgba(37,86,122,1);
     padding-top: 3px;
     padding-bottom: 3px;}  
-    .homepage table a {
+    .sitemap table a {
     text-decoration: none;
     color: rgba(244,241,237,1);
-}/* main.homepage目录专属 */
+}/* main.sitemap目录专属 */
 
 .abc div {
   width: 100%;

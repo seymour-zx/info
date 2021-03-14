@@ -125,7 +125,7 @@ def info_link(file, indexfolder, txtfolder, htmlfolder):
         rel_ico = urllib.request.pathname2url(rel_ico)
         rel_css = os.path.relpath("../css/mystyle.css", htmlfolder)
         rel_css = urllib.request.pathname2url(rel_css)
-        rel_css2 = os.path.relpath("../css/commonstyle.css", htmlfolder)
+        rel_css2 = os.path.relpath("../css/teststyle.css", htmlfolder)
         rel_css2 = urllib.request.pathname2url(rel_css2)
         infolist = []        
         infolist.append('\n  <link href="')
