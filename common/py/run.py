@@ -66,7 +66,7 @@ def info_article(file, indexfolder, txtfolder, htmlfolder, gmtime):
     if os.path.exists(path):
         info = info + frinfo(file, indexfolder)
     else:
-        fwinfo(path, '      <h2></h2>\n      <h3></h3>\n      <h4></h4>\n      <section></section>\n      <p></p>\n      <pre><code></code></pre>\n      <hr />\n <!--\n         <section>\n           <h5>本文系转载，无意侵权</h5>\n           <h5>本文内容参鉴：</h5>\n           <h6><a href="" title="" target="_blank"></a></h6>\n           <h5>如已侵权，联系自删</h5>\n         </section>\n   -->')
+        fwinfo(path, '      &nbsp;&nbsp;<h2></h2>\n      <h3></h3>\n      <h4></h4>\n      <section></section>\n      <p></p>\n      <pre><code></code></pre>\n      <hr />\n <!--\n         <section>\n           <h5>本文系转载，无意侵权</h5>\n           <h5>本文内容参鉴：</h5>\n           <h6><a href="" title="" target="_blank"></a></h6>\n           <h5>如已侵权，联系自删</h5>\n         </section>\n   -->')
         info = info + '      <h2></h2>\n      <h3></h3>\n      <h4></h4>\n      <section></section>\n      <p></p>\n      <pre><code></code></pre>\n      <hr />\n <!--\n         <section>\n           <h5>本文系转载，无意侵权</h5>\n           <h5>本文内容参鉴：</h5>\n           <h6><a href="" title="" target="_blank"></a></h6>\n           <h5>如已侵权，联系自删</h5>\n         </section>\n   -->'
     info = info + '\n    </article>'
     return info
