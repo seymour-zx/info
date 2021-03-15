@@ -1,82 +1,100 @@
-
-
       <h2>本地初始化配置</h2>
-      <p>$ git config --global user.name "seymour-zx"</p>
-      <p>$ git config --global user.email "seymour.zx@foxmail.com"</p>
-      <p>查看配置信息：$ git config --list</p>
-      <p>生成公共密钥：$ ssh-keygen -t rsa -C "seymour.zx@foxmail.com"</p>
-      <p>打开文件"id_rsa.pub"，全选复制。</p>
-      <p>登录GitHub账户，打开“Settings”，页面跳转后点击"SSH and GPG keys",选择绿框"New SHH Key"。</p>
-      <p>“Title”随意取名，“Key”则粘贴上文件"id_rsa.pub"的全部内容，然后点绿框“Add SSH Key”确认。</p>
-      <p>回到本地目标文件夹，右键开启"git bash"，输入“$ ssh -T git@github.com”，再输入“yes”确认。</p>
-    <hr />
-    <h2>快速推送</h2>
-      <p>$ git add --all</p>
-      <p>$ git commit -m "说明内容"</p>
-      <p>$ git push -u origin master</p>
-    <hr />
-    <h2>远程仓库相关命令</h2>
-      <p>克隆仓库：$ git clone https://github.com/seymour-zx/seymour-zx.github.io.git</p>
-      <p>查看远程仓库：$ git remote -v</p>
-      <p>添加远程仓库：$ git remote add [name] [url]</p>
-      <p>删除远程仓库：$ git remote rm [name]</p>
-      <p>修改远程仓库：$ git remote set-url --push[name][newUrl]</p>
-      <p>拉取远程仓库：$ git pull [remoteName] [localBranchName]</p>
-      <p>推送远程仓库：$ git push [remoteName] [localBranchName]</p>
-    <hr />
-    <h2>分支（branch）相关命令</h2>
-      <p>查看当前分支：$ git branch</p>
-      <p>查看远程分支：$ git branch -a</p>
-      <p>查看远程分支：$ git branch -r</p>
-      <p>创建本地分支：$ git branch [name]</p>
-      <p>git branck aaa（创建aaa分支）</p>
-      <p>切换分支：$ git checkout [name]</p>
-      <p>git checkout aaa（切换到aaa分支）</p>
-      <p>创建新分支并立即切换到新分支：$ git checkout -b [name]</p>
-      <p>git chechout -b aaa（创建本地aaa分支，同时切换到aaa分支。* 只有提交的时候才会在服务端上创建对应分支。）</p>
-      <p>删除已经参与了合并的分支：$ git branch -d [name]</p>
-      <p>强制删除分支：$ git branch -D [name]</p>
-      <p>将[name]分支合并到当前分支：$ git merge [name]</p>
-      <p>创建远程分支：$ git push origin [name]</p>
-      <p>删除远程分支：$ git push origin :heads/[name]</p>
-      <p>查看本地分支文件信息，确保更新时不产生冲突：$ git status</p> 
-    <hr />
-    <h2>版本（tag）相关命令</h2>
-      <p></p>
-      <p>查看版本：$ git tag</p>
-      <p>创建版本：$ git tag [name]</p>
-      <p>删除版本：$ git tag -d [name]</p>
-      <p>查看远程版本：$ git tag -r</p>
-      <p>创建远程版本：$ git push origin [name]</p>
-      <p>删除远程版本：$ git push origin :refs/tags/[name]</p>
-    <hr />
-    <h2>子模块(submodule)相关命令</h2>
-      <p></p>
-      <p>添加子模块：$ git submodule add [url] [path]</p>
-      <p>初始化子模块：$ git submodule init（只需在克隆仓库后运行一次就行）</p>
-      <p>更新子模块：$ git submodule update（更新或切换分支后都需要运行）</p>
-      <p>分4步删除子模块：
-        <br />$ git rm --cached [path]
-        <br />编辑“.gitmodules”文件，将子模块的相关配置节点删除掉
-        <br />编辑“.git/config”文件，将子模块的相关配置节点删除掉
-        <br />手动删除子模块残留的目录
-      </p>
-    <hr />
-    <h2>忽略一些文件、文件夹不提交</h2>
-      <p></p>
-      <p>在仓库根目录下创建名称为“.gitignore”的文件，写入不需要的文件夹名或文件，每个元素占一行即可，如</p>
-      <p>target</p>
-      <p>bin</p>
-      <p>*.db</p>
-    <hr />
-
-
-<h2></h2>
-      <h3></h3>
-      <h4></h4>
-      <section></section>
-      <p></p>
-      <pre><code></code></pre>
+        <pre class="code">$ git config --global user.name "seymour-zx"</pre>
+        <pre class="code">$ git config --global user.email "seymour.zx@foxmail.com"</pre>
+        <p>查看配置信息：</p>
+        <pre class="code">$ git config --list</pre>
+        <p>生成公共密钥：</p>
+        <pre class="code">$ ssh-keygen -t rsa -C "seymour.zx@foxmail.com"</pre>
+        <p>打开文件"id_rsa.pub"，全选复制。</p>
+        <p>登录GitHub账户，打开“Settings”，页面跳转后点击"SSH and GPG keys",选择绿框"New SHH Key"。</p>
+        <p>“Title”随意取名，“Key”则粘贴上文件"id_rsa.pub"的全部内容，然后点绿框“Add SSH Key”确认。</p>
+        <p>回到本地目标文件夹，右键开启"git bash"，输入：</p>
+        <pre class="code">$ ssh -T git@github.com</pre>
+        <p>再输入“yes”确认。</p>
+        <hr />
+        <h2>快速推送</h2>
+        <pre class="code">$ git add --all</pre>
+        <pre class="code">$ git commit -m "说明内容"</pre>
+        <pre class="code">$ git push -u origin master</pre>
+        <p>三句命令可以直接复制黏贴：</p>
+        <pre class="code">
+git add --all
+git commit -m "update"
+git push -u origin master</pre>
+      <hr />
+      <h2>远程仓库相关命令</h2>
+        <p>克隆仓库：</p>
+        <pre class="code">$ git clone https://github.com/seymour-zx/zhengxie.info.git</pre>
+        <p>查看远程仓库：</p>
+        <pre class="code">$ git remote -v</pre>
+        <p>添加远程仓库：</p>
+        <pre class="code">$ git remote add [name] [url]</pre>
+        <p>删除远程仓库：</p>
+        <pre class="code">$ git remote rm [name]</pre>
+        <p>修改远程仓库：</p>
+        <pre class="code">$ git remote set-url --push[name][newUrl]</pre>
+        <p>拉取远程仓库：</p>
+        <pre class="code">$ git pull [remoteName] [localBranchName]</pre>
+        <p>推送远程仓库：</p>
+        <pre class="code">$ git push [remoteName] [localBranchName]</pre>
+      <hr />
+      <h2>分支（branch）相关命令</h2>
+        <p>查看当前分支：</p>
+        <pre class="code">$ git branch</pre>
+        <p>查看远程分支：</p>
+        <pre class="code">$ git branch -a</pre>
+        <p>查看远程分支：</p>
+        <pre class="code">$ git branch -r</pre>
+        <p>创建本地分支，例如创建【aaa】分支：</p>
+        <pre class="code">$ git branck aaa</pre>
+        <p>切换分支，例如切换到【aaa】分支：</p>
+        <pre class="code">$ git checkout aaa</pre>
+        <p>创建本地新分支并立即切换到本地新分支，例如创建本地新分支并立即切换到【aaa】本地新分支：<br />*只有提交的时候才会在服务端上创建对应分支。*</p>
+        <pre class="code">$ git checkout -b aaa</pre>
+        <p>删除已经参与了合并的分支aaa：</p>
+        <pre class="code">$ git branch -d aaa</pre>
+        <p>强制删除aaa分支：</p>
+        <pre class="code">$ git branch -D aaa</pre>
+        <p>将【aaa】分支合并到当前分支：</p>
+        <pre class="code">$ git merge aaa</pre>
+        <p>创建远程aaa分支：</p>
+        <pre class="code">$ git push origin aaa</pre>
+        <p>删除远程aaa分支：</p>
+        <pre class="code">$ git push origin :heads/aaa</pre>
+        <p>查看本地分支文件信息，确保更新时不产生冲突：</p>
+        <pre class="code">$ git status</pre>
+      <hr />
+      <h2>版本（tag）相关命令</h2>
+        <p>查看版本：</p>
+        <pre class="code">$ git tag</pre>
+        <p>创建版本：</p>
+        <pre class="code">$ git tag [name]</pre>
+        <p>删除版本：</p>
+        <pre class="code">$ git tag -d [name]</pre>
+        <p>查看远程版本：</p>
+        <pre class="code">$ git tag -r</pre>
+        <p>创建远程版本：</p>
+        <pre class="code">$ git push origin [name]</pre>
+        <p>删除远程版本：</p>      
+        <pre class="code">$ git push origin :refs/tags/[name]</pre>
+        <hr />
+      <h2>子模块(submodule)相关命令</h2>
+        <p>添加子模块：</p>
+        <pre class="code">$ git submodule add [url] [path]</pre>
+        <p>初始化子模块：<br />*只需在克隆仓库后运行一次就行*</p>
+        <pre class="code">$ git submodule init</pre>
+        <p>更新子模块：<br />*更新或切换分支后都需要运行*</p>
+        <pre class="code">$ git submodule update</pre>
+        <p>分4步删除子模块：
+          <br />(1)
+          <pre class="code">$ git rm --cached [path]</pre>
+          (2)编辑“.gitmodules”文件，将子模块的相关配置节点删除掉          <br />
+          (3)编辑“.git/config”文件，将子模块的相关配置节点删除掉          <br />
+          (4)手动删除子模块残留的目录
+        </p>
+      <hr />
+      <h2>忽略一些文件、文件夹不提交</h2>
+        <p>在仓库根目录下创建名称为“.gitignore”的文件，写入不需要的文件夹名或文件，每个元素占一行即可，如：target bin *.db</p>
       <hr />
  <!--
          <section>
