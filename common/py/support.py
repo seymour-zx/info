@@ -118,46 +118,43 @@ def info_link(file, indexfolder, txtfolder, htmlfolder):
 # 'link.txt'
     info = ''
     path = linkpath(file, indexfolder)
-    # if os.path.exists(path):
-    #     info = info + frinfo(file, indexfolder)
-    # else:
-    #     rel_ico = os.path.relpath("../image/favicon.ico", htmlfolder)
-    #     rel_ico = urllib.request.pathname2url(rel_ico)
-    #     rel_css = os.path.relpath("../css/mystyle.css", htmlfolder)
-    #     rel_css = urllib.request.pathname2url(rel_css)
-    #     rel_css2 = os.path.relpath("../css/teststyle.css", htmlfolder)
-    #     rel_css2 = urllib.request.pathname2url(rel_css2)
-    #     infolist = []        
-    #     infolist.append('\n  <link href="')
-    #     infolist.append(rel_ico)
-    #     infolist.append('" rel="shortcut icon" type="image/x-icon" />\n    <!--调用网页图标-->\n  <link href="')
-    #     infolist.append(rel_css)
-    #     infolist.append('" rel="stylesheet" type="text/css" />\n    <!--调用css样式-->\n')
-    #     infolist.append('\n  <link href="')
-    #     infolist.append(rel_css2)
-    #     infolist.append('" rel="stylesheet" type="text/css" />\n    <!--调用css样式-->\n')
-    #     for i in range(len(infolist)):
-    #         info = info + infolist[i]
-    #     fwinfo(path, info)
-    rel_ico = os.path.relpath("../image/favicon.ico", htmlfolder)
-    rel_ico = urllib.request.pathname2url(rel_ico)
-    rel_css = os.path.relpath("../css/mystyle.css", htmlfolder)
-    rel_css = urllib.request.pathname2url(rel_css)
-    rel_css2 = os.path.relpath("../css/teststyle.css", htmlfolder)
-    rel_css2 = urllib.request.pathname2url(rel_css2)
-    infolist = []        
-    infolist.append('\n  <link href="')
-    infolist.append(rel_ico)
-    infolist.append('" rel="shortcut icon" type="image/x-icon" />\n    <!--调用网页图标-->\n  <link href="')
-    infolist.append(rel_css)
-    infolist.append('" rel="stylesheet" type="text/css" />\n    <!--调用css样式-->\n')
-    infolist.append('\n  <link href="')
-    infolist.append(rel_css2)
-    infolist.append('" rel="stylesheet" type="text/css" />\n    <!--调用css样式-->\n')
-    for i in range(len(infolist)):
-        info = info + infolist[i]
-    fwinfo(path, info)
+    if os.path.exists(path):
+        info = info + frinfo(file, indexfolder)
+    else:
+        rel_ico = os.path.relpath("../image/favicon.ico", htmlfolder)
+        rel_ico = urllib.request.pathname2url(rel_ico)
+        rel_css = os.path.relpath("../css/mystyle.css", htmlfolder)
+        rel_css = urllib.request.pathname2url(rel_css)
+        rel_css2 = os.path.relpath("../css/teststyle.css", htmlfolder)
+        rel_css2 = urllib.request.pathname2url(rel_css2)
+        infolist = []        
+        infolist.append('\n  <link href="')
+        infolist.append(rel_ico)
+        infolist.append('" rel="shortcut icon" type="image/x-icon" />\n    <!--调用网页图标-->\n  <link href="')
+        infolist.append(rel_css)
+        infolist.append('" rel="stylesheet" type="text/css" />\n    <!--调用css样式-->\n')
+        infolist.append('\n  <link href="')
+        infolist.append(rel_css2)
+        infolist.append('" rel="stylesheet" type="text/css" />\n    <!--调用css样式-->\n')
+        for i in range(len(infolist)):
+            info = info + infolist[i]
+        fwinfo(path, info)
     return info
+    # rel_ico = os.path.relpath("../image/favicon.ico", htmlfolder)
+    # rel_ico = urllib.request.pathname2url(rel_ico)
+    # rel_css = os.path.relpath("../css/mystyle.css", htmlfolder)
+    # rel_css = urllib.request.pathname2url(rel_css)
+    # infolist = []        
+    # infolist.append('\n  <link href="')
+    # infolist.append(rel_ico)
+    # infolist.append('" rel="shortcut icon" type="image/x-icon" />\n    <!--调用网页图标-->')
+    # infolist.append('\n  <link href="')
+    # infolist.append(rel_css)
+    # infolist.append('" rel="stylesheet" type="text/css" />\n    <!--调用css样式-->\n')
+    # for i in range(len(infolist)):
+    #     info = info + infolist[i]
+    # fwinfo(path, info)
+    # return info
 
 def info_footer(file, txtfolder, gmtime):
 # 'footer.txt'      

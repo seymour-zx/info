@@ -116,7 +116,7 @@ def htmls(htmlfolder, indexfolder, txtfolder, gmtime):
         # 基础
         if not htmlfolder.find('sitemap')==-1:
             # 主页
-            info = info + '\n  <main class="sitemap">\n'
+            info = info + '\n  <main class="base sitemap">\n'
             info = info + info_article('article.html', indexfolder, txtfolder, htmlfolder, gmtime)
         else:
             info = info + '\n  <main class="base">\n'

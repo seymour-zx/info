@@ -1,61 +1,135 @@
-html{
-  margin: 0; padding: 0; border: 0;
+/* 初始化标签默认样式 
+a, a:hover, sup, img, sub, 
+*/
+a { color: rgba(3,2,4,1); text-decoration: none; }
+a:hover { color: #cd0200; text-decoration: underline; }
+sup { vertical-align: text-top; }
+img { vertical-align: middle }
+sub { vertical-align: text-bottom; }
+h1, h2, h3, h4, h5, h6, p { color: rgba(3,2,4,1); }
+ul, ol, li { list-style: none; margin: 0; padding: 0; }
+pre.code { color: rgba(244,241,237,1); background-color: rgba(3,2,4,1); overflow: auto; max-height: 38.2vh; }
+table, tr, td, div, form, input, label, pre { margin: 0; padding: 0; }
+
+
+/* 单一标签样式 
+html， body, header, footer, main, article
+*/
+html { 
+  font: 16px '宋体', -apple-system, 'Times New Roman', sans-serif;
   overflow-x: hidden; overflow-y: scroll;
-  display: flex; align-items: center; justify-content:center;  
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: rgba(244,241,237,1);
-  background-image: url(../image/background.png);
+  margin: 0; padding: 0; border: 0;
+  width: 100%; height: 100%;
+  align-items: center; justify-content: center; 
+  background-position: center; background-repeat: no-repeat;
+  background-attachment: fixed; background-size: cover; 
+  background-color: rgba(244,241,237,1); background-image: url(../image/background.png);
   /* background-image: url(https://w.wallhaven.cc/full/r2/wallhaven-r257z1.png); */
-  /* background-image: url(https://api.ixiaowai.cn/api/api.php); */
-  /* 小歪API */
+  /* 小歪API *//* background-image: url(https://api.ixiaowai.cn/api/api.php); */
 }
-body {margin: 0; padding: 0; border: 0; width: 100%; height: 100%; overflow: hidden;
+body { margin: 0; }
+header {
+  background-color: rgba(130,36,30,1);
+  align-items: center; justify-content:center;
 }
-header {background-color: rgba(130,36,30,1); align-items: center; justify-content:center;}
-  .plaque {width: 100%; display: flex; align-items: center; justify-content:center;}
-    .plaque table {border-collapse: collapse;/* 显示边框 */}
-    .plaque .logo {
-      width: 5rem;
-      height: 5rem;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url(../image/favicon.ico);}
-    .plaque table * {
-      margin: 0; padding: 0; border: none;
-      text-align: center;
-      vertical-align:middle !important;
-      color: rgba(243,215,55,1);}
-    .plaque .logo + td {text-align: justify; text-align-last: justify;}
-    .plaque tr.mid {font-size: 2rem; font-weight: bolder; border-top: 1px solid rgba(244,241,237,1); border-bottom: 1px solid rgba(244,241,237,1);}
-    .plaque td.mid {font-size: 1rem; font-weight: normal; color: rgba(244,241,237,1);}
-  .menu {width: 100%; display: flex; align-items: center; justify-content:center;}
-    .menu table {
-      width: 100%;
-      border-collapse: collapse;/* 显示边框 */
-      font-size: 1.25rem;
-      line-height: 2rem;
-      margin-top: 4px;
-      margin-bottom: 4px;}
-    .menu table * {
-      margin: 0; padding: 0; border: none;
-      text-align: center;
-      vertical-align:middle !important;            
-      text-decoration: none;
-      width: 25%;
-      color: rgba(244,241,237,1);}
-    .menu tr {border-top: 1px solid rgba(244,241,237,1); border-bottom: 1px solid rgba(244,241,237,1);
+  header .plaque { width: 100%; height: 7rem; display: flex; align-items: center; justify-content: center; }
+    header .plaque table { border-collapse: collapse; }  
+    header .plaque .logo { width: 5rem; height: 5rem; background-position: center; background-size: contain; background-repeat: no-repeat; background-image: url(../image/favicon.ico); }
+    header .plaque table * { margin: 0; padding: 0; border: none; color: rgba(243,215,55,1); text-align: center; vertical-align: middle !important; }
+    header .plaque .logo + td { text-align: justify; text-align-last: justify; }
+    header .plaque tr.mid { font-size: 2rem; font-weight: bolder; border-top: 1px solid rgba(244,241,237,1); border-bottom: 1px solid rgba(244,241,237,1); }
+    header .plaque td.mid { font-size: 1rem; font-weight: normal; color: rgba(244,241,237,1); }
+  header .menu {width: 100%; display: flex; align-items: center; justify-content:center; }
+    header .menu table { width: 100%; border-collapse: collapse; font-size: 1.25rem; line-height: 2rem; margin-top: 4px; margin-bottom: 4px; }
+    header .menu table * { margin: 0; padding: 0; border: none; text-align: center; vertical-align: middle !important; text-decoration: none; width: 25%; color: rgba(244,241,237,1); }
+    header .menu tr { border-top: 1px solid rgba(244,241,237,1); border-bottom: 1px solid rgba(244,241,237,1); }
+footer {
+  width: 100%;
 }
-footer {width: 100%;}
-  footer > div {display: flex; align-items: center; justify-content:center; text-align: center;
-    color: rgba(244,241,237,1);
-    background-color: rgba(37,86,122,1);}
-  footer a {
-    color: rgba(244,241,237,1);
-    text-decoration: none;
+  footer > div { display: flex; align-items: center; justify-content: center; text-align: center; color: rgba(244,241,237,1); background-color: rgba(37,86,122,1);}
+main { width: 100%; display: flex; align-items: center; justify-content:center; }
+  article { width: 100%; min-height: calc(100vh - 99px); margin: auto; background-color: rgba(244,241,237,0.8);
+}
+main.base h1 { text-align: center; }
+main.sitemap td + td { width: 100%; }
+main.sitemap tr:first-child { white-space: nowrap; }
+main.sitemap td { color: rgba(244,241,237,1); background-color: rgba(37,86,122,1); padding: 3px; }  
+main.sitemap a { color: rgba(244,241,237,1); }
+main.bookmark input[type="checkbox"] { /* 隐藏复选框 */ display: none; }
+main.bookmark input:checked + div { /* 隐藏div初始化 */ display: none; }
+main.bookmark label { /* 控制标签 */
+  display: block;
+  color: rgba(243,215,55,1);
+  background-color: rgba(3,2,4,0.6);
+  border-bottom: 1px solid rgba(130,36,30,1);
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 1rem;
+}
+main.bookmark .content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgba(244,241,237,0);
+}
+main.bookmark .content span {
+  margin: 6px;
+  padding: 6px;
+  color: rgba(244,241,237,1);
+  background-color: rgba(37,86,122,1);
+}
+main.bookmark .content a {
+  display: inline-block;
+  margin: 6px;
+  padding: 6px;
+  border-left: 1px solid rgba(37,86,122,1);
+  min-width: 120px;
 }
 
+/* .welcome input[type="radio"] {display: none;}
+.welcome section {display: none;}
+.welcome input[type="radio"]:checked + section {display: block;}
+.welcome input[name="市级"]:checked + section {display: block;} */
 
+/* .welcome input[type="checkbox"] {display: none;}
+.welcome input:checked + div {display: none;}
+.welcome label {
+  margin: 0;
+  display: block;
+  color:rgba(243,215,55,1);
+  background-color: rgba(3,2,4,0.6);
+  border-bottom: 1px solid rgba(130,36,30,1);
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 1rem;}
+.welcome .content {    
+  background-color: rgba(244,241,237,0);
+  width: 100%; 
+  display: flex;
+  flex-wrap: wrap;}
+.welcome .content span {
+  padding: 6px;    
+  color: rgba(244,241,237,1);
+  background-color: rgba(37,86,122,1);}
+.welcome .content a {
+  display:inline-block;
+  text-decoration: none;
+  color: rgba(3,2,4,1);
+  margin: 6px;
+  padding: 6px;    
+  border-left: 1px solid rgba(37,86,122,1);
+  min-width: 120px;
+} */
+/* main.welcome书签专属 */
+
+@media only screen and (min-width: 588px) {
+  header { display: flex; }
+    header .menu { min-width: 61.8%; }
+  article { width: 61.8%; min-height: calc(100vh - 66px); }
+}
+@media only screen and (orientation : landscape) {/* 横屏 */}
+@media only screen and (orientation : portrait) {/* 竖屏 */}
