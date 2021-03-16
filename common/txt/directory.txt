@@ -1,5 +1,5 @@
 ../../
-../../private/bookmark/
+../../private/
 ../../base/about/
 ../../base/sitemap/
 ../../unit/1/

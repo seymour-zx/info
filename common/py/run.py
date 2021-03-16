@@ -103,15 +103,18 @@ def htmls(htmlfolder, indexfolder, txtfolder, gmtime):
         info = info + '\n  <main class="welcome">\n'
         # info = info + info_article('article.html', indexfolder, txtfolder, htmlfolder, gmtime)
         info = info + frinfo('article.html', indexfolder)
-    elif not htmlfolder.find('/private/')==-1:
+    elif not htmlfolder.find('/private/')==-1:        
         # 私有
-        if not htmlfolder.find('bookmark')==-1:
-            # 书签
-            info = info + '\n  <main class="bookmark">\n'
-            info = info + frinfo('article.html', indexfolder)
-        else:
-            info = info + '\n  <main>\n'
-            info = info + info_article('article.html', indexfolder, txtfolder, htmlfolder, gmtime)
+        # 书签
+        info = info + '\n  <main class="bookmark">\n'
+        info = info + frinfo('article.html', indexfolder)
+        # if not htmlfolder.find('bookmark')==-1:
+        #     # 书签
+        #     info = info + '\n  <main class="bookmark">\n'
+        #     info = info + frinfo('article.html', indexfolder)
+        # else:
+        #     info = info + '\n  <main>\n'
+        #     info = info + info_article('article.html', indexfolder, txtfolder, htmlfolder, gmtime)
     elif not htmlfolder.find('/base/')==-1:
         # 基础
         if not htmlfolder.find('sitemap')==-1:

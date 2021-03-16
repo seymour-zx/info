@@ -27,7 +27,7 @@
             <a href="https://zhengxie.info/base/sitemap/" title="" target="_self">目录</a>
           </td>
           <td>
-            <a href="https://zhengxie.info/private/bookmark/" title="" target="_self">书签</a>
+            <a href="https://zhengxie.info/private/" title="" target="_self">私签</a>
           </td>
         </tr>
       </table>
