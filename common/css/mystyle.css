@@ -7,7 +7,7 @@ sup { vertical-align: text-top; }
 img { vertical-align: middle }
 sub { vertical-align: text-bottom; }
 h1, h2, h3, h4, h5, h6, p { color: rgba(3,2,4,1); }
-ul, ol, li { list-style: none; margin: 0; padding: 0; }
+ul, ol { list-style: none; margin: 0; padding: 0; }
 pre.code { color: rgba(244,241,237,1); background-color: rgba(64,144,113,1); overflow: auto; max-height: 38.2vh; }
 table, tr, td, div, form, input, label, pre { margin: 0; padding: 0; }
 
