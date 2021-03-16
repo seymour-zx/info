@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 { color: rgba(3,2,4,1); }
 ul, ol { list-style: none; margin: 0; padding: 0; }
 pre.code { color: rgba(244,241,237,1); background-color: rgba(64,144,113,1); overflow: auto; max-height: 38.2vh; }
 table, tr, td, div, form, input, label, pre { margin: 0; padding: 0; }
-tr { width: 100% ;}
+
 
 /* 单一标签样式 
 html， body, header, footer, main, article
@@ -52,6 +52,8 @@ main { width: 100%; display: flex; align-items: center; justify-content:center; 
   article { width: 100%; min-height: calc(100vh - 99px); margin: auto; background-color: rgba(244,241,237,0.8);
 }
 main.base h1 { text-align: center; }
+main.sitemap table { width: 100%; }
+main.sitemap tr { width: 100%; }
 main.sitemap td + td { width: 100%; }
 main.sitemap tr:first-child { white-space: nowrap; }
 main.sitemap td { color: rgba(244,241,237,1); background-color: rgba(37,86,122,1); padding: 3px; }  
@@ -127,7 +129,7 @@ main.bookmark .content a {
 } */
 /* main.welcome书签专属 */
 
-@media only screen and (min-width: 588px) {
+@media only screen and (min-width: 750px) {
   header { display: flex; }
     header .menu { min-width: 61.8%; }
   article { width: 61.8%; min-height: calc(100vh - 66px); }
