@@ -1,35 +1,32 @@
 
-  <header>
-    <div class="plaque">
-      <table>
-        <tr>
-          <td class="logo" rowspan="3"></td>
-          <td colspan="3">颐亲王的小栈</td>
-        </tr>
-        <tr class="mid">
-          <td>正协</td>
-          <td class="mid">信<br />息</td>
-          <td>客栈</td>
-        </tr>
-        <tr><td colspan="3">Z H E N G X I E . I N F O</td></tr>
-      </table>
-    </div><!-- /.plaque 匾额 -->    
-    <div class="menu">
-      <table>
-        <tr>
-          <td>
-            <a href="https://zhengxie.info/" title="" target="_self">首页</a>
-          </td>
-          <td>
-            <a href="https://zhengxie.info/base/about/" title="" target="_self">关于</a>
-          </td>
-          <td>
-            <a href="https://zhengxie.info/base/sitemap/" title="" target="_self">目录</a>
-          </td>
-          <td>
-            <a href="https://zhengxie.info/private/" title="" target="_self">私签</a>
-          </td>
-        </tr>
-      </table>
-    </div><!-- /.menu 菜单 -->    
-  </header>
+    <header>
+        <table class="plaque">
+            <tr>
+                <td class="logo" rowspan="3"></td>
+                <td colspan="3">颐亲王的小栈</td>
+            </tr>
+            <tr class="mid">
+                <td>正协</td>
+                <td class="mid">信<br />息</td>
+                <td>客栈</td>
+            </tr>
+            <tr><td colspan="3">Z H E N G X I E . I N F O</td></tr>
+        </table><!-- /.plaque 匾额 --> 
+        <table class="menu">
+            <tr>
+                <td>
+                    <a href="https://zhengxie.info/" title="" target="_self">首页</a>
+                </td>
+                <td>
+                    <a href="https://zhengxie.info/base/about/" title="" target="_self">关于</a>
+                </td>
+                <td>
+                    <a href="https://zhengxie.info/base/sitemap/" title="" target="_self">目录</a>
+                </td>
+                <td>
+                    <a href="https://zhengxie.info/private/" title="" target="_self">私签</a>
+                </td>
+            </tr>
+        </table><!-- /.menu 菜单 -->   
+    </header>
+    <div>

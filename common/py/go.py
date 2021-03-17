@@ -1,10 +1,17 @@
+"""
+  操作流程：
+01. 检查路径
+02. 当前时间
+"""
 # coding: utf-8
 import os
 import urllib.request
 import webbrowser
 import time
-from support import init, linkpath, folders, frinfo, fwinfo
-from support import info_title, info_keywords, info_description, info_link, info_footer
+from ready import checkpath, folders, linkpath, frinfo, fwinfo
+from ready import reset_footer
+from ready import info_title, info_keywords, info_description, info_link
+
 
 
 def update(txtfolder):
@@ -35,8 +42,7 @@ def update(txtfolder):
 def info_article(file, indexfolder, txtfolder, htmlfolder, gmtime):
 # 'article.html'
     info = ''
-    info = info + '\n    <article>'
-    info = info + '\n      <h1>' + frinfo('title.txt', indexfolder) + '</h1>'
+    info = info + '\n            <h1>' + frinfo('title.txt', indexfolder) + '</h1>'
     if htmlfolder=='../../':
         # 首页
         pass
@@ -56,19 +62,32 @@ def info_article(file, indexfolder, txtfolder, htmlfolder, gmtime):
             pass
     elif not htmlfolder.find('/unit/')==-1:
         # 信息
-        info = info + '\n      <h6>华朝颐亲王 | 正协信息客栈 | '
+        info = info + '\n            <h6>华朝颐亲王 | 正协信息客栈 | '
         info = info + time.strftime('%Y-%m-%dT%H:%MZ', gmtime)
-        info = info + '</h6>\n'
+        info = info + '</h6>'
     else:
         pass
-    info = info + '      <hr />\n'
+    info = info + '\n            <hr />'
+    info = info + '\n            <article>\n'
     path = linkpath(file, indexfolder)
     if os.path.exists(path):
         info = info + frinfo(file, indexfolder)
     else:
-        fwinfo(path, '      &nbsp;&nbsp;<h2></h2>\n      <h3></h3>\n      <h4></h4>\n      <section></section>\n      <p></p>\n      <pre><code></code></pre>\n      <hr />\n <!--\n         <section>\n           <h5>本文系转载，无意侵权</h5>\n           <h5>本文内容参鉴：</h5>\n           <h6><a href="" title="" target="_blank"></a></h6>\n           <h5>如已侵权，联系自删</h5>\n         </section>\n   -->')
-        info = info + '      <h2></h2>\n      <h3></h3>\n      <h4></h4>\n      <section></section>\n      <p></p>\n      <pre><code></code></pre>\n      <hr />\n <!--\n         <section>\n           <h5>本文系转载，无意侵权</h5>\n           <h5>本文内容参鉴：</h5>\n           <h6><a href="" title="" target="_blank"></a></h6>\n           <h5>如已侵权，联系自删</h5>\n         </section>\n   -->'
-    info = info + '\n    </article>'
+        message = '\n'
+        message = message + '\n<!--'
+        message = message + '\n                <h2>  </h2>'
+        message = message + '\n                <p>&nbsp;&nbsp;  </p>'
+        message = message + '\n                <h3>  </h3>'
+        message = message + '\n                <h4>  </h4>'
+        message = message + '\n                <pre class="code" >  </pre>'
+        message = message + '\n                <hr />'
+        message = message + '\n                <br />'
+        message = message + '\n                <h2>参考 / Reference</h2>'
+        message = message + '\n                <a href="  " title="  " >  </a><br />'
+        message = message + '\n-->'
+        fwinfo(path, message)
+        info = info + message
+    info = info + '\n            </article>'
     return info
 
 
@@ -100,39 +119,31 @@ def htmls(htmlfolder, indexfolder, txtfolder, gmtime):
     # 标签<main>个性化
     if htmlfolder=='../../':
         # 首页
-        info = info + '\n  <main class="welcome">\n'
-        # info = info + info_article('article.html', indexfolder, txtfolder, htmlfolder, gmtime)
+        info = info + '\n        <main class="welcome">\n'
         info = info + frinfo('article.html', indexfolder)
     elif not htmlfolder.find('/private/')==-1:        
         # 私有
         # 书签
-        info = info + '\n  <main class="bookmark">\n'
+        info = info + '\n        <main class="bookmark">\n'
         info = info + frinfo('article.html', indexfolder)
-        # if not htmlfolder.find('bookmark')==-1:
-        #     # 书签
-        #     info = info + '\n  <main class="bookmark">\n'
-        #     info = info + frinfo('article.html', indexfolder)
-        # else:
-        #     info = info + '\n  <main>\n'
-        #     info = info + info_article('article.html', indexfolder, txtfolder, htmlfolder, gmtime)
     elif not htmlfolder.find('/base/')==-1:
         # 基础
         if not htmlfolder.find('sitemap')==-1:
             # 主页
-            info = info + '\n  <main class="base sitemap">\n'
+            info = info + '\n        <main class="base sitemap">\n'
             info = info + info_article('article.html', indexfolder, txtfolder, htmlfolder, gmtime)
         else:
-            info = info + '\n  <main class="base">\n'
+            info = info + '\n        <main class="base">\n'
             info = info + info_article('article.html', indexfolder, txtfolder, htmlfolder, gmtime)
     elif not htmlfolder.find('/unit/')==-1:
         # 信息
-        info = info + '\n  <main class="unit">\n'
+        info = info + '\n        <main class="unit">\n'
         info = info + info_article('article.html', indexfolder, txtfolder, htmlfolder, gmtime)
     else:
-        info = info + '\n  <main>\n'
+        info = info + '\n        <main>\n'
         info = info + info_article('article.html', indexfolder, txtfolder, htmlfolder, gmtime)
     # 通用
-    info = info + '\n  </main>\n'
+    info = info + '\n        </main>\n'
     # 通用
     info = info + frinfo('footer.txt', txtfolder)
     # 通用
@@ -144,20 +155,20 @@ def htmls(htmlfolder, indexfolder, txtfolder, gmtime):
     html = os.path.abspath(html)
     # webbrowser.open(html,new = 0, autoraise=True)
 
-
 if __name__ == '__main__':
 # 主程序
     cmdfolder = 'D:\\Workspace'
     pyfolder = 'D:\\Workspace\\Html\\zhengxie.info\\common\\py'
+    # pyfolder = 'D:\\Workspace\\znew\\common\\py'
     # 初始化
-    if init(cmdfolder, pyfolder):        
+    if checkpath(cmdfolder, pyfolder): 
         # 当前格林尼治时间
         gmtime = time.gmtime()
         datetime = time.strftime('%Y-%m-%dT%H:%MZ', gmtime)
         # 通用txt/html组件存放于文件夹：
         txtfolder = '../txt/'
         # 更新通用txt/html组件
-        info_footer('footer.txt', txtfolder, gmtime)
+        reset_footer('footer.txt', txtfolder, gmtime)
         # 读取文件夹目录
         htmlfolders, indexfolders = folders('directory.txt', txtfolder)
         # 更新index.html
@@ -166,18 +177,46 @@ if __name__ == '__main__':
         # 更新目录
         update(txtfolder)
 
-    # pyfolder = input('\n......程序执行完毕！......\n......按Enter关闭窗口......')
 else:
     print('导入模块', 'html_support.py')
-    """
-    # 网址拼接
-    # from urllib.parse import urljoin
-    # a = urljoin("https://zhengxie.info/folder/currentpage.html", "../")  
-    # b = urljoin("https://zhengxie.info/folder/currentpage.html", "folder2/anotherpage.html")  
-    # c = urljoin("https://zhengxie.info/folder/currentpage.html", "/folder3/anotherpage.html")  
-    # d = urljoin("https://zhengxie.info/folder/currentpage.html", "../finalpage.html")  
-    # print (a)
-    # print (b)
-    # print (c)
-    # print (d)
-    """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+  from urllib.parse import urljoin
+  a = urljoin("https://zhengxie.info/folder/currentpage.html", "../")  
+  b = urljoin("https://zhengxie.info/folder/currentpage.html", "folder2/anotherpage.html")  
+  c = urljoin("https://zhengxie.info/folder/currentpage.html", "/folder3/anotherpage.html")  
+  d = urljoin("https://zhengxie.info/folder/currentpage.html", "./folder4/anotherpage.html")
+  e = urljoin("https://zhengxie.info/folder/currentpage.html", "../folder5/anotherpage.html")  
+  f = urljoin("https://zhengxie.info/folder/currentpage.html", "../finalpage.html")  
+  print (a)
+  print (b)
+  print (c)
+  print (d)
+  print (e)
+  print (f)
+"""

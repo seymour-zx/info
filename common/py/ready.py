@@ -4,8 +4,8 @@ import urllib.request
 import webbrowser
 import time
 
-def init(cmdfolder, pyfolder):
-# 初始化
+def checkpath(cmdfolder, pyfolder):
+# 检查路径
     if os.getcwd()==cmdfolder or os.getcwd()==pyfolder:
         print('......运行目录正确！......')
         # 运行目录必须切换至存放py文件的文件夹
@@ -20,6 +20,26 @@ def init(cmdfolder, pyfolder):
         print('......当前运行目录：')
         print(os.getcwd())
         return False
+
+def fwinfo(file, info):
+# 写入信息
+    if os.path.exists(file):
+        print('覆写信息:\n', os.path.abspath(file))
+    else:
+        print('新写信息:\n', os.path.abspath(file))
+    with open(file, 'w', encoding='utf-8') as fw:
+        fw.writelines(info)
+
+def frinfo(file, folder=""):
+# 读取信息
+    path = linkpath(file, folder)
+    if not os.path.exists(path):
+        info = '\n'
+        print('信息读取失败:\n', os.path.abspath(path))
+    else:
+        with open(path, 'r', encoding='utf-8') as fr:
+            info = fr.read()
+    return info
 
 def linkpath(children, parents=''):
 # 相对链接路径
@@ -46,31 +66,33 @@ def folders(directory, txtfolder):
             indexfolders.append(path)
     return htmlfolders, indexfolders
 
-def fwinfo(file, info):
-# 写入信息
-    if os.path.exists(file):
-        print('覆写信息:\n', os.path.abspath(file))
-    else:
-        print('新写信息:\n', os.path.abspath(file))
-    with open(file, 'w', encoding='utf-8') as fw:
-        fw.writelines(info)
-
-def frinfo(file, folder=""):
-# 读取信息
-    path = linkpath(file, folder)
-    if not os.path.exists(path):
-        info = '\n'
-        print('信息读取失败:\n', os.path.abspath(path))
-    else:
-        with open(path, 'r', encoding='utf-8') as fr:
-            info = fr.read()
-    return info
+def reset_footer(file, txtfolder, gmtime):
+# 'footer.txt'      
+    infolist = []
+    infolist.append('    </div>')
+    infolist.append('\n    <footer>')
+    infolist.append('\n        <!-- 上次维护 -->')
+    infolist.append('\n        <div>')
+    infolist.append('\n            |&nbsp;')
+    infolist.append('\n            &lt;&nbsp;')
+    infolist.append('\n            上次维护：')
+    infolist.append(time.strftime('%Y-%m-%dT%H:%MZ', gmtime))
+    infolist.append('\n            &nbsp;&gt;')
+    infolist.append('\n            &nbsp;|')
+    infolist.append('\n        </div>')
+    infolist.append('\n        <!-- /上次维护 -->')
+    infolist.append('\n    </footer>')
+    info = ''
+    for i in range(len(infolist)):
+        info = info + infolist[i]
+    path = linkpath(file, txtfolder)
+    fwinfo(path, info)
 
 def info_title(file, indexfolder, txtfolder):
 # 'title.txt'
     info = '\n'
     infolist = []
-    infolist.append('  <title>')
+    infolist.append('    <title>')
     path = linkpath(file, indexfolder)
     if os.path.exists(path):
         infolist.append(frinfo(file, indexfolder))
@@ -125,50 +147,21 @@ def info_link(file, indexfolder, txtfolder, htmlfolder):
         rel_ico = urllib.request.pathname2url(rel_ico)
         rel_css = os.path.relpath("../css/mystyle.css", htmlfolder)
         rel_css = urllib.request.pathname2url(rel_css)
-        rel_css2 = os.path.relpath("../css/teststyle.css", htmlfolder)
-        rel_css2 = urllib.request.pathname2url(rel_css2)
         infolist = []        
-        infolist.append('\n  <link href="')
+        infolist.append('\n    <link href="')
         infolist.append(rel_ico)
-        infolist.append('" rel="shortcut icon" type="image/x-icon" />\n    <!--调用网页图标-->\n  <link href="')
+        infolist.append('" rel="shortcut icon" type="image/x-icon" />\n        <!--调用网页图标-->')
+        infolist.append('\n    <link href="')
         infolist.append(rel_css)
-        infolist.append('" rel="stylesheet" type="text/css" />\n    <!--调用css样式-->\n')
-        infolist.append('\n  <link href="')
-        infolist.append(rel_css2)
-        infolist.append('" rel="stylesheet" type="text/css" />\n    <!--调用css样式-->\n')
+        infolist.append('" rel="stylesheet" type="text/css" />\n        <!--调用css样式-->\n')
         for i in range(len(infolist)):
             info = info + infolist[i]
         fwinfo(path, info)
     return info
-    # rel_ico = os.path.relpath("../image/favicon.ico", htmlfolder)
-    # rel_ico = urllib.request.pathname2url(rel_ico)
-    # rel_css = os.path.relpath("../css/mystyle.css", htmlfolder)
-    # rel_css = urllib.request.pathname2url(rel_css)
-    # infolist = []        
-    # infolist.append('\n  <link href="')
-    # infolist.append(rel_ico)
-    # infolist.append('" rel="shortcut icon" type="image/x-icon" />\n    <!--调用网页图标-->')
-    # infolist.append('\n  <link href="')
-    # infolist.append(rel_css)
-    # infolist.append('" rel="stylesheet" type="text/css" />\n    <!--调用css样式-->\n')
-    # for i in range(len(infolist)):
-    #     info = info + infolist[i]
-    # fwinfo(path, info)
-    # return info
 
-def info_footer(file, txtfolder, gmtime):
-# 'footer.txt'      
-    infolist = []
-    infolist.append('\n  <footer>\n    <!-- 上次维护 -->\n    <div>\n      |&nbsp;\n      &lt;&nbsp;\n      上次维护：')
-    infolist.append(time.strftime('%Y-%m-%dT%H:%MZ', gmtime))
-    infolist.append('\n      &nbsp;&gt;\n      &nbsp;|\n    </div>\n    <!-- /上次维护 -->\n  </footer>')
-    info = ''
-    for i in range(len(infolist)):
-        info = info + infolist[i]
-    path = linkpath(file, txtfolder)
-    fwinfo(path, info)
+
 
 if __name__ == '__main__':
-    print('执行程序', 'support.py')
+    print('执行程序', 'ready.py')
 else:
-    print('导入模块', 'support.py')
+    print('导入模块', 'ready.py')
