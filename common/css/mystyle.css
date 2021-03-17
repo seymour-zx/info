@@ -21,9 +21,9 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     -webkit-text-size-adjust: 100%;
-    /* background-position: center; */
-    /* align-items: center;
-    justify-content: center; */
+    background-position: center;
+    align-items: center;
+    justify-content: center;
 }
 header { background-color: rgba(130,36,30,1); }
 header table {
@@ -92,43 +92,55 @@ main.bookmark .content a {
   min-width: 120px;
 }
 
-/* .welcome input[type="radio"] {display: none;}
-.welcome section {display: none;}
-.welcome input[type="radio"]:checked + section {display: block;}
-.welcome input[name="市级"]:checked + section {display: block;} */
 
-/* .welcome input[type="checkbox"] {display: none;}
-.welcome input:checked + div {display: none;}
-.welcome label {
-  margin: 0;
+.container {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-wrap:wrap;  
+  justify-content: space-evenly;
+  align-items: flex-start;
+
+  flex-direction: row;
+}
+.wrapper {
+  width:358px;
+  margin:0.5%;
+}
+
+.box {
+  width: 100%;
+  /* height: 200px; */
+  background-color: seagreen;
+
+}
+
+main.welcome label  {
   display: block;
-  color:rgba(243,215,55,1);
+  color: rgba(243,215,55,1);
   background-color: rgba(3,2,4,0.6);
   border-bottom: 1px solid rgba(130,36,30,1);
   cursor: pointer;
   font-size: 1.25rem;
   padding-top: 6px;
   padding-bottom: 6px;
-  padding-left: 1rem;}
-.welcome .content {    
-  background-color: rgba(244,241,237,0);
-  width: 100%; 
-  display: flex;
-  flex-wrap: wrap;}
-.welcome .content span {
-  padding: 6px;    
-  color: rgba(244,241,237,1);
-  background-color: rgba(37,86,122,1);}
-.welcome .content a {
-  display:inline-block;
-  text-decoration: none;
-  color: rgba(3,2,4,1);
-  margin: 6px;
-  padding: 6px;    
-  border-left: 1px solid rgba(37,86,122,1);
-  min-width: 120px;
-} */
-/* main.welcome书签专属 */
+  padding-left: 1rem;
+}
+
+main.welcome input[type="radio"] {
+  display: none;
+}
+.box {
+  display: none;
+}
+main.welcome input[type="radio"]:checked + div{
+  display: block;
+} 
+main.welcome a {
+  display: block;
+  width: 100%;
+
+}
 
 @media only screen and (max-width: 750px) {
     header table.plaque { margin-bottom: 0.5rem; }

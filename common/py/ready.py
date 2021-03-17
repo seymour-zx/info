@@ -4,8 +4,10 @@ import urllib.request
 import webbrowser
 import time
 
-def checkpath(cmdfolder, pyfolder):
+def checkpath():
 # 检查路径
+    cmdfolder = 'D:\\Workspace'
+    pyfolder = 'D:\\Workspace\\Html\\zhengxie.info\\common\\py'
     if os.getcwd()==cmdfolder or os.getcwd()==pyfolder:
         print('......运行目录正确！......')
         # 运行目录必须切换至存放py文件的文件夹

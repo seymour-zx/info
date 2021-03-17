@@ -67,13 +67,12 @@ def info_article(file, indexfolder, txtfolder, htmlfolder, gmtime):
         info = info + '</h6>'
     else:
         pass
-    info = info + '\n            <hr />'
-    info = info + '\n            <article>\n'
+    info = info + '\n            <hr />'    
     path = linkpath(file, indexfolder)
     if os.path.exists(path):
         info = info + frinfo(file, indexfolder)
     else:
-        message = '\n'
+        message = '\n            <article>\n'
         message = message + '\n<!--'
         message = message + '\n                <h2>  </h2>'
         message = message + '\n                <p>&nbsp;&nbsp;  </p>'
@@ -85,9 +84,9 @@ def info_article(file, indexfolder, txtfolder, htmlfolder, gmtime):
         message = message + '\n                <h2>参考 / Reference</h2>'
         message = message + '\n                <a href="  " title="  " >  </a><br />'
         message = message + '\n-->'
+        message = message + '\n            </article>'
         fwinfo(path, message)
         info = info + message
-    info = info + '\n            </article>'
     return info
 
 
@@ -157,11 +156,11 @@ def htmls(htmlfolder, indexfolder, txtfolder, gmtime):
 
 if __name__ == '__main__':
 # 主程序
-    cmdfolder = 'D:\\Workspace'
-    pyfolder = 'D:\\Workspace\\Html\\zhengxie.info\\common\\py'
+    # cmdfolder = 'D:\\Workspace'
+    # pyfolder = 'D:\\Workspace\\Html\\zhengxie.info\\common\\py'
     # pyfolder = 'D:\\Workspace\\znew\\common\\py'
     # 初始化
-    if checkpath(cmdfolder, pyfolder): 
+    if checkpath(): 
         # 当前格林尼治时间
         gmtime = time.gmtime()
         datetime = time.strftime('%Y-%m-%dT%H:%MZ', gmtime)
