@@ -14,30 +14,7 @@ from ready import info_title, info_keywords, info_description, info_link
 
 
 
-def update(txtfolder):
-# 更新目录
-    n = 999
-    htmlfolder = '../../unit/' + str(n) +'/'
-    info = ''
-    info = info + '      <table>\n'
-    while not n==0:
-        if os.path.exists(htmlfolder):
-            indexfolder = linkpath('index', htmlfolder)
-            info = info + '        <tr>\n          <td nowrap="nowrap">'
-            gmtime = time.localtime(int(frinfo('gmtime.txt', indexfolder)))
-            gmtime = time.strftime('%Y-%m-%d', gmtime)
-            info = info + gmtime
-            info = info + '</td>\n'
-            info = info + '          <td><a href="https://zhengxie.info/unit/' + str(n) +'/"'
-            info = info + ' title="" target="_blank">'
-            info = info + frinfo('title.txt', indexfolder)
-            info = info + '</a></td>\n        </tr>\n'            
-        n = n - 1
-        htmlfolder = '../../unit/' + str(n) +'/'
-    info = info + '      </table>'
-    path = linkpath('article.html', '../../base/sitemap/index/')
-    fwinfo(path, info)
-    htmls(htmlfolder='../../base/sitemap/', indexfolder='../../base/sitemap/index/', txtfolder=txtfolder, gmtime=time.gmtime())
+
 
 def info_article(file, indexfolder, txtfolder, htmlfolder, gmtime):
 # 'article.html'
@@ -88,6 +65,34 @@ def info_article(file, indexfolder, txtfolder, htmlfolder, gmtime):
         fwinfo(path, message)
         info = info + message
     return info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def htmls(htmlfolder, indexfolder, txtfolder, gmtime):
@@ -153,6 +158,34 @@ def htmls(htmlfolder, indexfolder, txtfolder, gmtime):
         fw.writelines(info)  
     html = os.path.abspath(html)
     # webbrowser.open(html,new = 0, autoraise=True)
+
+
+
+
+def update(txtfolder):
+# 更新目录
+    n = 999
+    htmlfolder = '../../unit/' + str(n) +'/'
+    info = ''
+    info = info + '      <table>\n'
+    while not n==0:
+        if os.path.exists(htmlfolder):
+            indexfolder = linkpath('index', htmlfolder)
+            info = info + '        <tr>\n          <td nowrap="nowrap">'
+            gmtime = time.localtime(int(frinfo('gmtime.txt', indexfolder)))
+            gmtime = time.strftime('%Y-%m-%d', gmtime)
+            info = info + gmtime
+            info = info + '</td>\n'
+            info = info + '          <td><a href="https://zhengxie.info/unit/' + str(n) +'/"'
+            info = info + ' title="" target="_blank">'
+            info = info + frinfo('title.txt', indexfolder)
+            info = info + '</a></td>\n        </tr>\n'            
+        n = n - 1
+        htmlfolder = '../../unit/' + str(n) +'/'
+    info = info + '      </table>'
+    path = linkpath('article.html', '../../base/sitemap/index/')
+    fwinfo(path, info)
+    htmls(htmlfolder='../../base/sitemap/', indexfolder='../../base/sitemap/index/', txtfolder=txtfolder, gmtime=time.gmtime())
 
 if __name__ == '__main__':
 # 主程序
